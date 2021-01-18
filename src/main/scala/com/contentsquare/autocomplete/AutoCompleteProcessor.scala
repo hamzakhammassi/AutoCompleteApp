@@ -20,7 +20,7 @@ class AutoCompleteProcessor {
     val keyWords: Try[List[String]] = KeyWordsReader.loadFiles(config.fileName)
 
     keyWords match {
-      case Success(keyWords) => doSometing(keyWords, config.selectedWords)
+      case Success(keyWords) => printAllResults(keyWords, config.selectedWords)
       case Failure(e) => logger.error(s"Couldn't load data from file :${config.fileName}, $e")
     }
   }
@@ -28,7 +28,7 @@ class AutoCompleteProcessor {
   /** Continue typing and get different suggestion
    * until type `quit` to exit the program
    */
-  def doSometing(keyWords: List[String], selectedWords: Int): Unit = {
+  def printAllResults(keyWords: List[String], selectedWords: Int): Unit = {
     logger.info(s"Programme Started")
 
     while (keyWords.nonEmpty) {
