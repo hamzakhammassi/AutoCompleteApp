@@ -105,5 +105,3 @@ V1.0.0
 
    step 3: keep this word and pass to the next
    
-   
->>>>>>> master
